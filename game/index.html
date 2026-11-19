@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vista Coral — Sunset Run</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-root">
+  <canvas id="scene-canvas"></canvas>
+
+  <div id="hud" class="hidden">
+    <div id="hud-objective">
+      <div id="hud-mission-title"></div>
+      <div id="hud-objective-text"></div>
+      <div id="hud-mission-timer"></div>
+    </div>
+    <div id="hud-topright">
+      <div id="hud-clock">18:42</div>
+      <div id="hud-weapon">FISTS</div>
+      <div id="hud-cash">$0</div>
+      <div id="hud-stars"></div>
+    </div>
+    <div id="hud-bottomleft">
+      <canvas id="minimap" width="220" height="220"></canvas>
+      <div id="hud-bars">
+        <div class="bar"><div id="hud-health" class="bar-fill health"></div></div>
+        <div class="bar"><div id="hud-armor" class="bar-fill armor"></div></div>
+      </div>
+      <div id="hud-district">Coral Downtown</div>
+    </div>
+    <div id="hud-speedo" class="hidden">
+      <div id="hud-speed">0</div>
+      <div class="speed-unit">KM/H</div>
+      <div id="hud-vehicle-name"></div>
+    </div>
+    <div id="hud-arrow"><div class="arrow-head"></div><div id="hud-arrow-dist"></div></div>
+    <div id="hud-crosshair">+</div>
+    <div id="hud-toast"></div>
+    <div id="hud-banner"></div>
+    <div id="hud-hint"></div>
+  </div>
+
+  <div id="screen-start" class="screen">
+    <div class="title-block">
+      <div class="title-kicker">A VISTA CORAL STORY</div>
+      <h1 class="title-main">SUNSET<span>RUN</span></h1>
+      <div class="title-sub">Rae Solano is back in town. The coast owes her money.</div>
+    </div>
+    <div class="menu">
+      <button id="btn-continue" class="menu-btn">Continue</button>
+      <button id="btn-new" class="menu-btn">New Game</button>
+      <button id="btn-controls" class="menu-btn">Controls</button>
+    </div>
+    <div id="controls-panel" class="controls-panel hidden">
+      <div><b>WASD</b> move / drive</div><div><b>Shift</b> sprint</div>
+      <div><b>Space</b> jump / handbrake</div><div><b>E</b> enter / steal car</div>
+      <div><b>Mouse</b> look (click to lock)</div><div><b>LMB / F</b> attack</div>
+      <div><b>1 / 2</b> fists / pistol</div><div><b>Esc</b> pause</div>
+    </div>
+    <div class="start-foot">Click a button to begin · progress saves automatically</div>
+  </div>
+
+  <div id="screen-pause" class="screen hidden">
+    <h2>PAUSED</h2>
+    <div class="menu">
+      <button id="btn-resume" class="menu-btn">Resume</button>
+      <button id="btn-save" class="menu-btn">Save Game</button>
+      <button id="btn-quit" class="menu-btn">Main Menu</button>
+    </div>
+  </div>
+
+  <div id="screen-dead" class="screen hidden">
+    <h2 id="dead-title" class="dead-title">WASTED</h2>
+    <div id="dead-sub">Hospital bill: $200</div>
+    <div class="menu"><button id="btn-respawn" class="menu-btn">Try Again</button></div>
+  </div>
+</div>
+<script src="vendor/three.min.js"></script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
